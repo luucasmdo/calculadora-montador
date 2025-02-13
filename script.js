@@ -53,7 +53,7 @@ function calcularPreco() {
     let percentual = 0;
 
     switch (tipoMovel) {
-        case "guarda-roupa": precoPorHora = 70; break;
+        case "guarda-roupa": precoPorHora = 80; break;
         case "cozinha": precoPorHora = 100; percentual = 5; break;
         case "painel-tv": precoPorHora = 60; percentual = 5; break;
         case "cama": precoPorHora = 50; break;
@@ -78,12 +78,12 @@ function calcularPreco() {
         } else if (valorMovel > 2000 && valorMovel <= 3000) {
             percentual = 16;
         } else if (valorMovel > 3000) {
-            percentual = 15;
+            percentual = 18;
         }
     }
 
     const precoPorHoraComPorcentagem = precoPorHora + (precoPorHora * (percentual / 100));
-    let precoTotal = (precoPorHoraComPorcentagem * tempoTotalHoras * qtdMoveis) + (km * 1);
+    let precoTotal = (precoPorHoraComPorcentagem * tempoTotalHoras * qtdMoveis) + (km * 1.5);
 
     if (necessitaInstalacao === "sim") {
         precoTotal += 50;
