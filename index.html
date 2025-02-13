@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora do Montador!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora do Montador!</h1>
+        <form id="form-calculadora">
+            <div class="form-group">
+                <label for="tipo-movel">Tipo de Móvel:</label>
+                <select id="tipo-movel" required>
+                    <option value="guarda-roupa">Guarda-Roupa</option>
+                    <option value="cozinha">Cozinha</option>
+                    <option value="painel-tv">Painel de TV</option>
+                    <option value="cama">Cama</option>
+                    <option value="closet">Closet</option>
+                    <option value="mesa">Mesa</option>
+                    <option value="estante">Estante</option>
+                    <option value="escritorio">Escritório</option>
+                    <option value="buffet">Buffet</option>
+                    <option value="rack-tv">Rack de TV</option>
+                    <option value="sofa">Sofá</option>
+                    <option value="banheiro">Armario de banheiro</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="valor-movel">Valor do Móvel (R$):</label>
+                <input type="text" id="valor-movel" placeholder="R$ 0,00" onfocus="limparValor(event)" onblur="restaurarValor(event)" oninput="formatarValor(event)" required>
+            </div>
+
+            <div class="form-group">
+                <label for="qtd-moveis">Quantidade de Móveis:</label>
+                <input type="number" id="qtd-moveis" min="1" required>
+            </div>
+
+            <div class="form-group">
+                <label>Tempo de Trabalho:</label>
+                <div class="tempo-group">
+                    <input type="number" id="horas" placeholder="Horas" min="0">
+                    <input type="number" id="minutos" placeholder="Minutos" min="0" max="59">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="km">Distância (KM):</label>
+                <input type="number" id="km" min="0" required>
+            </div>
+
+            <div class="form-group">
+                <label>Necessita Instalação?</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="instalacao" value="sim" required> Sim</label>
+                    <label><input type="radio" name="instalacao" value="nao" required> Não</label>
+                </div>
+            </div>
+
+            <button type="button" onclick="calcularPreco()">Calcular Preço</button>
+        </form>
+
+        <div id="resultado">
+            <h2>Preço Total:</h2>
+            <p id="preco-total">R$ 0,00</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
